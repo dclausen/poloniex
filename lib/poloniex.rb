@@ -63,8 +63,8 @@ module Poloniex
     post 'returnOpenOrders', currencyPair: currency_pair
   end
 
-  def self.trade_history( currency_pair, start = 0, end_time = Time.now.to_i )
-    post 'returnTradeHistory', currencyPair: currency_pair, start: start, :end => end_time
+  def self.trade_history( currency_pair, start = 0, end_time = Time.now.to_i, limit = 500 )
+    post 'returnTradeHistory', currencyPair: currency_pair, start: start, :end => end_time, :limit => limit
   end
 
   def self.buy( currency_pair, rate, amount )
